@@ -32,8 +32,13 @@ jobs:
           docker-images: true
           swap-storage: false
 
-      - name: Create 6GB Swap File
+      - name: Safely Create 6GB Swap File
         run: |
+          # Turn off swap if it is already active on a file named /swapfile
+          sudo swapoff -a || true
+          sudo rm -f /swapfile
+          
+          # Allocate fresh space
           sudo fallocate -l 6G /swapfile
           sudo chmod 600 /swapfile
           sudo mkswap /swapfile
