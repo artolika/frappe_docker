@@ -52,9 +52,10 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          file: images/custom/Containerfile
+          file: images/layered/Containerfile
           push: true
           build-args: |
+            FRAPPE_IMAGE_PREFIX=frappe
             FRAPPE_PATH=https://github.com/frappe/frappe
             FRAPPE_BRANCH=version-16
             PYTHON_VERSION=3.11.9
