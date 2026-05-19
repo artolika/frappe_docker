@@ -187,4 +187,3 @@ jobs:
           secrets: |
             id=apps_json,src=${{ env.APPS_JSON_PATH }}
           tags: ${{ env.FINAL_IMAGE }}
-
