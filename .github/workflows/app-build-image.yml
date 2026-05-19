@@ -34,11 +34,8 @@ jobs:
 
       - name: Safely Create 6GB Swap File
         run: |
-          # Turn off swap if it is already active on a file named /swapfile
           sudo swapoff -a || true
           sudo rm -f /swapfile
-          
-          # Allocate fresh space
           sudo fallocate -l 6G /swapfile
           sudo chmod 600 /swapfile
           sudo mkswap /swapfile
@@ -76,6 +73,7 @@ jobs:
             FRAPPE_BRANCH=version-16
             PYTHON_VERSION=3.11.9
             NODE_VERSION=18.20.2
+            APPS_TO_COMPILE=erpnext,hrms,payments,india_compliance,telephony,helpdesk,webshop
           secrets: |
             id=apps_json,src=apps.json
           tags: ghcr.io/${{ github.repository_owner }}/erpnext-custom:${{ inputs.image_tag }}
