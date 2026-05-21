@@ -4,5 +4,5 @@
   {"url": "https://github.com/frappe/payments", "branch": "develop"},
   {"url": "https://github.com/resilient-tech/india-compliance", "branch": "version-16"},
   {"url": "https://github.com/frappe/webshop", "branch": "develop"},
-  {"url": "https://github.com/alyf-de/erpnext_pdf-on-submit", "branch": "develop"}
+  {"url": "https://github.com/alyf-de/erpnext_pdf-on-submit", "branch": "version-16"}
 ]
