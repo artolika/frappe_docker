@@ -73,7 +73,6 @@ jobs:
             FRAPPE_BRANCH=version-16
             PYTHON_VERSION=3.11.9
             NODE_VERSION=18.20.2
-            APPS_TO_COMPILE=erpnext,hrms,payments,india_compliance,telephony,helpdesk,webshop
-          secrets: |
-            id=apps_json,src=apps.json
+          secret-files: |
+            apps_json=./apps.json
           tags: ghcr.io/${{ github.repository_owner }}/erpnext-custom:${{ inputs.image_tag }}
